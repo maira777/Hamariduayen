@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dua Collection</title>
+
+<style>
+:root{
+  --primary:#b92864;
+  --dark:#3d1620;
+  --accent:#fcd5ce;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins, Arial, sans-serif;}
+
+body{
+  min-height:100vh;
+  background:
+    radial-gradient(circle at top left,#f699c0,transparent 40%),
+    radial-gradient(circle at bottom right,#fdbae1,transparent 40%),
+    linear-gradient(180deg,#fcf8fa,#f0e2ec);
+  text-align:center;
+  padding:35px 15px;
+  color:var(--dark);
+  overflow-x:hidden;
+  position:relative;
+}
+
+/* Floating glowing shapes */
+.floating{
+  position:absolute;
+  width:20px;height:20px;
+  border-radius:50%;
+  background:radial-gradient(circle,#fff,#fcd5ce);
+  opacity:0.6;
+  animation:float 8s infinite ease-in-out;
+}
+
+.floating:nth-child(1){top:10%; left:15%; animation-delay:0s;}
+.floating:nth-child(2){top:20%; left:80%; animation-delay:2s;}
+.floating:nth-child(3){top:70%; left:30%; animation-delay:4s;}
+.floating:nth-child(4){top:60%; left:70%; animation-delay:6s;}
+.floating:nth-child(5){top:40%; left:50%; animation-delay:1s;}
+
+@keyframes float{
+  0%,100%{transform:translateY(0) translateX(0);}
+  50%{transform:translateY(-30px) translateX(20px);}
+}
+
+h2{
+  font-size:2.2rem;
+  margin-bottom:25px;
+  color:var(--primary);
+  text-shadow:0 0 15px rgba(185,40,100,0.7);
+  animation:textGlow 2s infinite alternate;
+}
+
+@keyframes textGlow{
+  from{text-shadow:0 0 10px rgba(185,40,100,0.5);}
+  to{text-shadow:0 0 25px rgba(185,40,100,1);}
+}
+
+.buttons{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-bottom:35px;
+}
+
+a.btn{
+  padding:13px 22px;border-radius:999px;
+  background:linear-gradient(135deg,var(--primary),#921951);
+  color:#fff;text-decoration:none;font-size:14px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.18);
+  transition:0.3s, box-shadow 0.3s;
+}
+
+a.btn:hover{
+  transform:translateY(-5px) scale(1.05);
+  box-shadow:0 15px 30px rgba(185,40,100,0.4);
+}
+
+.dua{
+  display:none;max-width:900px;margin:0 auto 30px;
+  padding:30px 18px;border-radius:26px;
+  background:rgba(255,255,255,0.6);backdrop-filter:blur(14px);
+  box-shadow:0 20px 40px rgba(0,0,0,0.12);
+  animation:fade 0.6s ease;
+}
+
+.dua:target{display:block;}
+
+.dua h3{
+  font-size:1.6rem;
+  margin-bottom:18px;
+  color:#064e3b;
+  text-shadow:0 0 8px rgba(0,78,59,0.5);
+}
+
+.images{max-width:720px;margin:auto;cursor:pointer;}
+.images img{
+  width:100%;
+  margin-bottom:18px;
+  border-radius:18px;
+  box-shadow:0 12px 30px rgba(0,0,0,0.18);
+  transition:transform 0.3s, box-shadow 0.3s;
+}
+.images img:hover{
+  transform:scale(1.03) rotate(-1deg);
+  box-shadow:0 15px 35px rgba(185,40,100,0.4);
+}
+
+.embed-pdf{
+  width:100%;
+  height:500px;
+  border-radius:16px;
+  box-shadow:0 12px 25px rgba(0,0,0,0.15);
+  margin-top:15px;
+  animation:fade 1s ease;
+}
+
+@keyframes fade{
+  from{opacity:0; transform:translateY(15px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+@media(max-width:600px){h2{font-size:1.9rem;}}
+</style>
+</head>
+
+<body>
+
+<h2>🌙 Dua Collection</h2>
+
+<!-- Floating glowing elements -->
+<div class="floating"></div>
+<div class="floating"></div>
+<div class="floating"></div>
+<div class="floating"></div>
+<div class="floating"></div>
+
+<div class="buttons">
+  <a href="#mulk" class="btn">Surah Mulk</a>
+  <a href="#taghabun" class="btn">Surah Taghabun</a>
+  <a href="#baqarah" class="btn">Baqarah (Last 2)</a>
+  <a href="#hashr" class="btn">Hashr (Last 3)</a>
+  <a href="#waqiah" class="btn">Surah Waqiah</a>
+  <a href="#kursi" class="btn">Ayat-ul-Kursi</a>
+  <a href="#4qul" class="btn">4 Qul</a>
+</div>
+
+<!-- PDF & Image Duas -->
+<div id="mulk" class="dua">
+  <h3>Surah Mulk</h3>
+  <embed src="surah-mulk.pdf.pdf" type="application/pdf" class="embed-pdf">
+</div>
+
+<div id="taghabun" class="dua">
+  <h3>Surah Taghabun</h3>
+  <embed src="surah-taghabun.pdf.pdf" type="application/pdf" class="embed-pdf">
+</div>
+
+<div id="waqiah" class="dua">
+  <h3>Surah Waqiah</h3>
+  <embed src="waqiah.pdf.pdf" type="application/pdf" class="embed-pdf">
+</div>
+
+<div id="baqarah" class="dua">
+  <h3>Surah Baqarah (Last 2 Ayat)</h3>
+  <div class="images">
+    <img src="Baqrah.PNG">
+  </div>
+</div>
+
+<div id="hashr" class="dua">
+  <h3>Surah Hashr (Last 3 Ayat)</h3>
+  <div class="images">
+    <img src="Hashr.png">
+  </div>
+</div>
+
+<div id="kursi" class="dua">
+  <h3>Ayat-ul-Kursi</h3>
+  <div class="images">
+    <img src="ayatulkursi.jpg">
+  </div>
+</div>
+
+<div id="4qul" class="dua">
+  <h3>4 Qul (Al-Kafiroon, Al-Ikhlas, Al-Falaq, An-Nas)</h3>
+  <embed src="quran-char-4-qul-urdu.pdf" type="application/pdf" class="embed-pdf">
+</div>
+
+</body>
+</html>
